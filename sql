@@ -15,3 +15,21 @@ JOIN Employee e2
 WHERE e1.managerId = e2.id
 AND e1.salary > e2.salary
 
+175. Combine Two Tables
+
+SELECT firstName,lastName,city,state
+FROM Person p
+LEFT JOIN Address a
+ON p.personId = a.personId
+
+
+183. Customers Who Never Order
+
+
+
+SELECT name as Customers
+FROM Customers c
+WHERE c.id NOT IN (SELECT customerId FROM orders)
+
+
+
