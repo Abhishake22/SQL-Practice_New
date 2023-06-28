@@ -32,4 +32,19 @@ FROM Customers c
 WHERE c.id NOT IN (SELECT customerId FROM orders)
 
 
+---Write a query to retrieve the employees who were hired in the last month and last quarter
+
+
+SELECT *
+FROM Employess
+WHERE HireDate >= DATEADD(MONTH,DATEDIFF(MONTH,0,GETDATE())-1,0)
+AND HireDate < DATEADD(MONTH,DATEDIFF(MONTH,0,GETDATE()),0)
+
+SELECT *
+FROM Employees
+WHERE HireDate >= DATEADD(QUARTER,DATEDIFF(QUARTER,0,GETDATE())-1,0)
+AND HireDate < DATEADD(QUARTER,DATEDIFF(QUARTER,0,GETDATE()),0)
+
+
+
 
